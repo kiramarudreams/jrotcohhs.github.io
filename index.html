@@ -13,6 +13,65 @@
       color: #fff;
     }
 
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .slideshow-container {
+      position: relative;
+      width: auto;
+      height: auto;
+      margin: 50px auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      object-fit: cover;
+    }
+
+    .slides-wrapper {
+      display: flex;
+      transition: transform 0.6s ease; /* animation */
+    }
+
+    .slides-wrapper img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    /* Buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* Dots */
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #bbb;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .active {
+      background: #333;
+    }
+
    header, footer {
       text-align: center;
       background-color: #000;
@@ -41,15 +100,6 @@
 
     nav a:hover {
       text-decoration: underline;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background-image: url("https://f.feridinha.com/OLQEQ.png");
-      background-size: cover;
-      background-position: center;
-      color: #fff;
     }
 
     .hero h2 {
@@ -88,6 +138,18 @@
       line-height: 1.6;
     }
 
+        .caption {
+      position: absolute;
+      bottom: 100px;             
+      left: 50%;                
+      transform: translateX(-50%);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      background: rgba(0,0,0,0.5); /* semi-transparent background */
+      padding: 10px 20px;
+      border-radius: 5px; }
+
   </style>
 </head>
 <body>
@@ -108,8 +170,53 @@
   </nav>
 
   <div class="hero">
-    <h2>Leadership, Discipline, and Honor</h2>
-    <p>Discover the spirit of the Marine Corps JROTC through our clubs, events, and community service. Semper Fidelis!</p>
+
+    <div class="slideshow-container">
+  <div class="slides-wrapper" id="slides">
+    <img src="https://f.feridinha.com/zS9we.jpg" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+  </div>
+
+  <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<div class="dots">
+  <span class="dot" onclick="goToSlide(0)"></span>
+  <span class="dot" onclick="goToSlide(1)"></span>
+  <span class="dot" onclick="goToSlide(2)"></span>
+
+</div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementById("slides");
+  const dots = document.getElementsByClassName("dot");
+  const totalSlides = slides.children.length;
+
+  function updateSlide() {
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+    dots[slideIndex].classList.add("active");
+  }
+
+  function changeSlide(n) {
+    slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+    updateSlide();
+  }
+
+  function goToSlide(n) {
+    slideIndex = n;
+    updateSlide();
+  }
+
+  // Initialize
+  updateSlide();
+</script>
+
   </div>
 
   <section>
