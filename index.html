@@ -380,6 +380,37 @@
         transition: background 0.3s;
       }
 
+      .side-by-side-container {
+        display: flex;
+        justify-content: center;
+        margin: 40px;
+      }
+
+      .card {
+        flex: 1;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .card h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+        color: #DAA520
+      }
+
+      .card p { 
+        font-size: 10px;
+      }
+
+      .subtext {
+        color: #FFF;
+      }
+
+      /* Vertical separator only on the left card */
+      .card.left {
+        border-right: 2px solid #DAA520;
+      }
+
   }
 
     </style>
