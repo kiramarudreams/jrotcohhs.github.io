@@ -166,6 +166,35 @@
       padding: 10px 20px;
       border-radius: 5px; }
 
+      .side-by-side-container {
+  display: flex;
+  align-items: flex-start; /* align top of the cards */
+  justify-content: center;
+  gap: 20px;               /* space between cards and separator */
+  margin: 40px;
+}
+
+.card {
+  flex: 1;                 /* make them take equal width */
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 28px;         /* bigger title */
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 16px;         /* subtext smaller */
+  color: #555;
+}
+
+.separator {
+  width: 50px;
+  background-color: #FFF;
+}
+
+
   </style>
 
 </head>
@@ -241,10 +270,22 @@
 
   </div>
 
-  <section>
+<div class="side-by-side-container">
+  <div class="card">
     <h3>About Our Program</h3>
-    <p>The Marine Corps Junior Reserve Officer Training Corps (MCJROTC) at Olympic Heights prepares young leaders through military-based instructions.
+    <p>The Marine Corps Junior Reserve Officer Training Corps (MCJROTC) at Olympic Heights prepares young leaders through military-based instructions. </p>
+  </div>
+  
+  <div class="separator"></div>
+  
+  <div class="card">
+    <h3>About Our Program</h3>
+    <p>The Marine Corps Junior Reserve Officer Training Corps (MCJROTC) at Olympic Heights prepares young leaders through military-based instructions. </p>
+  </div>
+</div>
 
-        <footer>
+<section> 
+  <footer>
     <p1> &copy; 2025 Lion Battalion | Olympic Heights MCJROTC</p1>
   </footer>
+</section>
