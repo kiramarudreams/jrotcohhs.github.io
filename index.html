@@ -154,6 +154,11 @@
       line-height: 1.6;
     }
 
+        section p2 {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
         .caption {
       position: absolute;
       bottom: 100px;             
@@ -166,32 +171,32 @@
       padding: 10px 20px;
       border-radius: 5px; }
 
-      .side-by-side-container {
+.side-by-side-container {
   display: flex;
-  align-items: flex-start; /* align top of the cards */
   justify-content: center;
-  gap: 20px;               /* space between cards and separator */
   margin: 40px;
 }
 
 .card {
-  flex: 1;                 /* make them take equal width */
+  flex: 1;
   text-align: center;
+  padding: 0 20px;
 }
 
 .card h2 {
-  font-size: 28px;         /* bigger title */
+  font-size: 40px;
   margin-bottom: 10px;
+  color: #DAA520
 }
 
 .subtext {
-  font-size: 16px;         /* subtext smaller */
-  color: #555;
+  font-size: 25px;
+  color: #FFF;
 }
 
-.separator {
-  width: 50px;
-  background-color: #FFF;
+/* Vertical separator only on the left card */
+.card.left {
+  border-right: 5px solid #DAA520;
 }
 
 
@@ -271,21 +276,20 @@
   </div>
 
 <div class="side-by-side-container">
-  <div class="card">
-    <h3>About Our Program</h3>
-    <p>The Marine Corps Junior Reserve Officer Training Corps (MCJROTC) at Olympic Heights prepares young leaders through military-based instructions. </p>
+  <div class="card left">
+    <h2>About our Program</h2>
+    <p class="subtext">The Marine Corps Junior Reserve Officer Training Corps (MCJROTC) at Olympic Heights prepares young leaders through military-based instructions.</p>
   </div>
-  
-  <div class="separator"></div>
-  
-  <div class="card">
-    <h3>About Our Program</h3>
-    <p>The Marine Corps Junior Reserve Officer Training Corps (MCJROTC) at Olympic Heights prepares young leaders through military-based instructions. </p>
+
+  <div class="card right">
+    <h2>Main Title 2</h2>
+    <p class="subtext">This is the subtext for the second paragraph.</p>
   </div>
 </div>
 
 <section> 
   <footer>
-    <p1> &copy; 2025 Lion Battalion | Olympic Heights MCJROTC</p1>
+    <p1> &copy; 2025 Lion Battalion | Olympic Heights MCJROTC</p1> <br> 
+    <p2> Made by <a href="https://www.instagram.com/kiramaruudreams/" target="_blank"> Kaue Faria</a> & <a href="https://www.instagram.com/im_kam1/" target="_blank"> Kamilly Guedes</a> </p2>
   </footer>
 </section>
