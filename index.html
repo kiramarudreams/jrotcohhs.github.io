@@ -20,7 +20,7 @@
     .slideshow-container {
       position: relative;
       width: auto;
-      height: 900px;
+      height: auto;
       margin: 50px auto; 
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -79,7 +79,7 @@
       color: #DAA520;
       padding: 40px 20px 20px;
       font-family: 'Orbitron', sans-serif;
-      font-size: 30px;
+      font-size: 40px;
     }
   
     footer {       
@@ -215,6 +215,13 @@
   transition: background 0.3s ease;
 }
 
+.instagram-overlay img {
+width: 30px; 
+height: 30px; 
+object-fit: contain;
+margin-right: 8px;  
+ }
+
 .instagram-overlay:hover {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -253,7 +260,15 @@
     <img src="images/image2.jpg" alt="">
     <img src="images/image3.jpeg" alt="">
 
-  </div>
+    </div>
+
+        <a href="https://www.instagram.com/olympicheightsmcjrotc/" target="_blank" class="instagram-overlay">
+  <img src="Instagram_icon.png" alt="Instagram" class="insta-icon">
+  <span>Check out our Instagram!</span>
+
+  </a>
+
+
 
   <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
   <button class="next" onclick="changeSlide(1)">&#10095;</button>
@@ -265,11 +280,6 @@
   <span class="dot" onclick="goToSlide(2)"></span>
 
 </div>
-
-    <a href="https://www.instagram.com/olympicheightsmcjrotc/" target="_blank" class="instagram-overlay">
-  <img src="Instagram_icon.png" alt="Instagram" class="insta-icon">
-  <span>Check out our Instagram!</span>
-</a>
 
 <script>
   let slideIndex = 0;
