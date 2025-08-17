@@ -199,6 +199,31 @@
   border-right: 5px solid #DAA520;
 }
 
+.instagram-overlay {
+  position: absolute;
+  bottom: 580px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.instagram-overlay:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.insta-icon {
+  width: 24px;
+  height: 24px;
+}
+
 
   </style>
 
@@ -227,6 +252,7 @@
     <img src="https://f.feridinha.com/xKzQg.jpg" alt="">
     <img src="https://f.feridinha.com/oeWoy.jpg" alt="">
     <img src="https://f.feridinha.com/Qnamf.jpeg" alt="">
+
   </div>
 
   <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -239,6 +265,11 @@
   <span class="dot" onclick="goToSlide(2)"></span>
 
 </div>
+
+    <a href="https://www.instagram.com/olympicheightsmcjrotc/" target="_blank" class="instagram-overlay">
+  <img src="Instagram_icon.png" alt="Instagram" class="insta-icon">
+  <span>Check out our Instagram!</span>
+</a>
 
 <script>
   let slideIndex = 0;
